@@ -27,9 +27,8 @@ export class ProductController {
         @Body('category_id') category_id: number,
         @Body('name') name: string,
     ){
-        console.log(1,name);
-        console.log(2,category_id);
-        /*const product = await this.productService.create({category_id,name});
+        console.log(1);
+        const product = await this.productService.create({category_id,name});
         this.httpService.post(`http://localhost:8000/api/category/${category_id}/product`,{
             id:category_id,        
             name            
@@ -37,8 +36,7 @@ export class ProductController {
             console.log('request send');
         });
         return  product;
-        */
-       return 'asdasdas';
+        
     }
      
 

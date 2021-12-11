@@ -6,7 +6,8 @@ import { Product } from './product.entity';
 import { HttpModule } from '@nestjs/axios';
 
 @Module({
-  imports:[TypeOrmModule.forFeature([Product]),HttpModule],
+  imports:[TypeOrmModule.forFeature([Product]),
+          HttpModule],
   exports:[TypeOrmModule],
   providers: [ProductService],
   controllers: [ProductController]
