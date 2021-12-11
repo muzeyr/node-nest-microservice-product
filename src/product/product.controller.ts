@@ -10,6 +10,14 @@ export class ProductController {
     }
  
 
+
+    @Get()
+    async findAll(){
+
+        return this.productService.find({});
+
+
+    }
     @Get('/:id/category')
     async postProduct(@Param('id') id:number ){
 
@@ -29,12 +37,12 @@ export class ProductController {
     ){
         console.log(1);
         const product = await this.productService.create({category_id,name});
-        this.httpService.post(`http://localhost:8000/api/category/${category_id}/product`,{
-            id:category_id,        
+        let sub  = this.httpService.post(`http://localhost:8000/api/category/${category_id}/product`,{
             name            
         }).subscribe(()=>{
             console.log('request send');
         });
+        sub.unsubscribe();
         return  product;
         
     }
