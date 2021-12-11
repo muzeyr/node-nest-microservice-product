@@ -1,1 +1,1 @@
-# node-nest-microservice-product
+nest start --debug --watch
